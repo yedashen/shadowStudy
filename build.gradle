@@ -1,0 +1,21 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.shadow_version = 'local_ye-abb72db1-SNAPSHOT'
+
+    dependencies {
+        classpath "com.tencent.shadow.core:runtime:$shadow_version"
+        classpath "com.tencent.shadow.core:activity-container:$shadow_version"
+        classpath "com.tencent.shadow.core:gradle-plugin:$shadow_version"
+        classpath 'org.javassist:javassist:3.28.0-GA'
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.2.1' apply false
+    id 'com.android.library' version '7.2.1' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
